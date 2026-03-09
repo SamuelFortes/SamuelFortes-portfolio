@@ -5,7 +5,7 @@ const experiences = [
     {
     role: "Bolsista Voluntário",
     company: "PIBITI - Iniciação em Desenvolvimento Tecnológico e Inovação",
-    period: "agosto/2025 - julho/2026",
+    period: "agosto/2025 - agosto/2026",
     activities: [
       "Desenvolvimento Full-Stack de plataforma web voltada para a gestão de saúde pública.",
       "Criação de APIs REST e interfaces responsivas utilizando FastAPI.",
