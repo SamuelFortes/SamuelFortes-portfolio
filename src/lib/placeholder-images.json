@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "profile-picture",
+      "description": "A placeholder for the author's profile picture.",
+      "imageUrl": "/WhatsApp Image 2026-03-09 at 14.10.38.jpeg",
+      "imageHint": "profile picture"
+    },
+    {
+      "id": "plataforma-saude-1",
+      "description": "Captura de tela da Plataforma Virtual de Saúde (UBS).",
+      "imageUrl": "/plataforma-saude.png",
+      "imageHint": "health platform dashboard"
+    },
+    {
+      "id": "chatbot-ia-1",
+      "description": "Captura de tela do ChatBot com IA.",
+      "imageUrl": "/chatbot-ia.png",
+      "imageHint": "chatbot interface"
+    },
+    {
+      "id": "website-viagens-1",
+      "description": "Captura de tela do Website de Viagens.",
+      "imageUrl": "/website-viagens.png",
+      "imageHint": "travel website homepage"
+    },
+    {
+      "id": "spotify-clone-1",
+      "description": "Captura de tela do Spotify Clone.",
+      "imageUrl": "/spotify-clone.jpeg",
+      "imageHint": "music player interface"
+    }
+  ]
+}
