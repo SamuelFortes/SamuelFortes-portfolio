@@ -9,9 +9,9 @@ const experiences = [
     activities: [
       "Desenvolvimento Full-Stack de plataforma web voltada para a gestão de saúde pública.",
       "Criação de APIs REST e interfaces responsivas utilizando FastAPI.",
-      "Modelagem de bancos de dados relacionais (PostgreSQL).",
+      "Modelagem de bancos de dados relacionais (PostgreSQL, Supabase).",
       "Levantamento de requisitos técnicos e análise de fluxos assistenciais junto a usuários finais.",
-      "Realização de testes de usabilidade (escala SUS) и documentação técnica do sistema.",
+      "Realização da documentação técnica do sistema.",
       "Controle de versão e organização do repositório do projeto utilizando Git e GitHub.",
     ],
   },
