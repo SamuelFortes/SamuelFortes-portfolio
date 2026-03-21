@@ -94,7 +94,8 @@ samuel_portfolio/
 
 O projeto pode ser hospedado em qualquer plataforma que suporte Next.js:
 
-- [Vercel](https://vercel.com/) (recomendado)
+- [Render](https://render.com/) (recomendado)
+- [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
 - Qualquer servidor Node.js com `npm run build && npm run start`
 
