@@ -1,38 +1,37 @@
 "use client";
 
-import { Github, Linkedin, Mail, MessageCircle, Download } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
+import Logo from "@/components/logo";
+import { useLanguage } from "@/contexts/language-context";
+import { socialLinks, emailAddress } from "@/lib/site-data";
 
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/dev-samuel-fortes",
-    icon: Linkedin,
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/SamuelFortes",
-    icon: Github,
-  },
-  {
-    name: "WhatsApp",
-    url: "https://wa.me/5586981802085",
-    icon: MessageCircle,
-  },
-];
+const cardClassName = (index: number) =>
+  cn(
+    "group flex items-center gap-5 rounded-xl border-[3px] border-foreground p-5 text-left shadow-neo transition-all duration-200",
+    "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg",
+    "active:translate-x-1 active:translate-y-1 active:shadow-neo-sm",
+    index % 2 === 0 ? "bg-primary/10" : "bg-accent/10"
+  );
 
-const emailAddress = "samuelfurtadofortes@gmail.com";
+const IconBox = ({ children }: { children: React.ReactNode }) => (
+  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-foreground text-background transition-transform duration-200 group-hover:scale-105">
+    {children}
+  </span>
+);
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const { toast } = useToast();
 
   const handleEmailClick = () => {
     navigator.clipboard.writeText(emailAddress);
     toast({
-      title: "Email copiado!",
-      description: "O endereço de email foi copiado para a sua área de transferência.",
+      title: t.contact.emailCopied,
+      description: t.contact.emailCopiedDesc,
     });
   };
 
@@ -40,14 +39,14 @@ export default function ContactSection() {
     <section id="contact" className="py-24 sm:py-32">
       <div className="mb-12 text-center">
         <h2 className="font-headline text-4xl font-bold tracking-tight">
-          Entre em Contato
+          {t.contact.title}
         </h2>
         <p className="mt-2 text-lg text-muted-foreground">
-          Estou sempre aberto a novas oportunidades e colaborações.
+          {t.contact.subtitle}
         </p>
       </div>
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {socialLinks.map((link) => {
+      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 sm:grid-cols-2">
+        {socialLinks.map((link, index) => {
           const Icon = link.icon;
           return (
             <a
@@ -55,44 +54,48 @@ export default function ContactSection() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-card/30 p-6 text-center shadow-lg backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-primary/10"
+              className={cardClassName(index)}
             >
-              <Icon className="mb-4 h-12 w-12 text-primary transition-transform group-hover:scale-110" />
-              <p className="text-xl font-semibold text-foreground">{link.name}</p>
+              <IconBox>
+                <Icon className="h-7 w-7" />
+              </IconBox>
+              <span className="text-xl font-bold text-foreground">{link.name}</span>
             </a>
           );
         })}
         <button
           type="button"
           onClick={handleEmailClick}
-          className="group flex flex-col items-center justify-center rounded-2xl border border-white/20 bg-card/30 p-6 text-center shadow-lg backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-primary/10"
+          className={cardClassName(socialLinks.length)}
         >
-          <Mail className="mb-4 h-12 w-12 text-primary transition-transform group-hover:scale-110" />
-          <p className="text-xl font-semibold text-foreground">Email</p>
+          <IconBox>
+            <Mail className="h-7 w-7" />
+          </IconBox>
+          <span className="text-xl font-bold text-foreground">{t.contact.email}</span>
         </button>
       </div>
 
       <div className="mx-auto max-w-4xl text-center">
         <Separator className="my-16 bg-border/20" />
         <h3 className="font-headline text-3xl font-bold tracking-tight">
-          Quer saber mais?
+          {t.contact.cvTitle}
         </h3>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Faça o download do meu currículo para um resumo completo da minha
-          jornada profissional.
-        </p>
+        <p className="mt-4 text-lg text-muted-foreground">{t.contact.cvText}</p>
         <div className="mt-8">
           <Button asChild size="lg" className="shadow-lg">
             <a href="/samuel-fortes-cv.pdf" download>
               <Download className="mr-2 h-5 w-5" />
-              Baixar CV
+              {t.contact.cvButton}
             </a>
           </Button>
         </div>
       </div>
-      
-      <footer className="mt-24 text-center text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} Samuel Furtado Fortes. Todos os direitos reservados.</p>
+
+      <footer className="mt-24 flex flex-col items-center gap-3 text-center text-muted-foreground">
+        <Logo className="text-2xl" />
+        <p>
+          &copy; {new Date().getFullYear()} Samuel Furtado Fortes. {t.contact.rights}
+        </p>
       </footer>
     </section>
   );

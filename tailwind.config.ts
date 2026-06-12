@@ -54,7 +54,20 @@ const config: Config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
       },
+      boxShadow: {
+        neo: "5px 5px 0 0 hsl(var(--neo-shadow-color))",
+        "neo-sm": "3px 3px 0 0 hsl(var(--neo-shadow-color))",
+        "neo-lg": "8px 8px 0 0 hsl(var(--neo-shadow-color))",
+      },
       keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         blink: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
@@ -77,6 +90,8 @@ const config: Config = {
         },
       },
       animation: {
+        float: "float 6s ease-in-out infinite",
+        "fade-up": "fade-up 0.4s ease-out both",
         blink: "blink 1s step-end infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
