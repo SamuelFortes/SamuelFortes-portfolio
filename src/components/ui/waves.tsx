@@ -1,31 +1,30 @@
 export default function Waves() {
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 bottom-0"
+      className="pointer-events-none absolute inset-0"
       aria-hidden="true"
     >
       <svg
-        viewBox="0 0 1440 500"
+        viewBox="0 0 1440 900"
         preserveAspectRatio="none"
-        className="w-full"
-        style={{ height: "clamp(180px, 48vh, 480px)" }}
+        className="h-full w-full"
       >
         <defs>
-          <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0.4">
+          <linearGradient id="wave-gradient" x1="0" y1="1" x2="1" y2="0">
             <stop offset="0%" stopColor="#7C3AED" />
             <stop offset="52%" stopColor="#A21CAF" />
             <stop offset="100%" stopColor="#EC4899" />
           </linearGradient>
         </defs>
-        {/* Back layer — sits higher, more transparent */}
+        {/* Back layer — diagonal, sits higher, more transparent */}
         <path
-          d="M0,500 L0,190 C140,120 300,240 500,175 C700,110 870,225 1080,165 C1220,120 1340,180 1440,148 L1440,500 Z"
+          d="M0,900 L0,600 C200,520 420,380 660,300 C860,235 1060,210 1260,130 C1350,95 1400,60 1440,40 L1440,900 Z"
           fill="url(#wave-gradient)"
           opacity="0.35"
         />
-        {/* Front layer — tighter curve, more opaque */}
+        {/* Front layer — diagonal, lower edge, more opaque */}
         <path
-          d="M0,500 L0,305 C160,258 330,328 530,292 C710,260 880,316 1070,283 C1220,257 1350,292 1440,268 L1440,500 Z"
+          d="M0,900 L0,750 C180,700 380,610 620,560 C820,518 1020,500 1220,430 C1340,390 1400,360 1440,330 L1440,900 Z"
           fill="url(#wave-gradient)"
           opacity="0.75"
         />

@@ -19,7 +19,6 @@ export default function Landing() {
       </header>
 
       <main className="relative z-10 flex flex-1 flex-col items-center justify-center gap-5 px-4 text-center">
-        <Logo className="text-3xl md:text-4xl" />
         <h1 className="font-headline text-5xl font-bold tracking-tight text-foreground md:text-7xl">
           Samuel Furtado Fortes
         </h1>

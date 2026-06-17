@@ -1,6 +1,8 @@
-import { Github, Linkedin, MessageCircle } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/whatsapp-icon";
 import type { ProjectCategory, ProjectId } from "@/locales/types";
+
+type IconComponent = React.ComponentType<{ className?: string }>;
 
 export const projectOrder: ProjectId[] = ["saude", "chatbot", "viagens", "spotify"];
 
@@ -44,7 +46,7 @@ export const projectsMeta: Record<
   },
 };
 
-export const socialLinks: { name: string; url: string; icon: LucideIcon }[] = [
+export const socialLinks: { name: string; url: string; icon: IconComponent }[] = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/dev-samuel-fortes",
@@ -58,7 +60,7 @@ export const socialLinks: { name: string; url: string; icon: LucideIcon }[] = [
   {
     name: "WhatsApp",
     url: "https://wa.me/5586981802085",
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
   },
 ];
 

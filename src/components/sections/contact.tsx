@@ -14,7 +14,7 @@ const cardClassName = (index: number) =>
     "group flex items-center gap-5 rounded-xl border-[3px] border-foreground p-5 text-left shadow-neo transition-all duration-200",
     "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg",
     "active:translate-x-1 active:translate-y-1 active:shadow-neo-sm",
-    index % 2 === 0 ? "bg-primary/10" : "bg-accent/10"
+    "bg-primary/10"
   );
 
 const IconBox = ({ children }: { children: React.ReactNode }) => (
@@ -82,7 +82,7 @@ export default function ContactSection() {
         </h3>
         <p className="mt-4 text-lg text-muted-foreground">{t.contact.cvText}</p>
         <div className="mt-8">
-          <Button asChild size="lg" className="shadow-lg">
+          <Button asChild variant="outline" size="lg" className="shadow-lg border-primary/50 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary">
             <a href="/samuel-fortes-cv.pdf" download>
               <Download className="mr-2 h-5 w-5" />
               {t.contact.cvButton}

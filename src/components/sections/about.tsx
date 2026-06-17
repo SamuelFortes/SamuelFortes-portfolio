@@ -59,7 +59,7 @@ export default function AboutSection() {
           <div className="space-y-4">
             <SideLabel>{t.about.downloadLabel}</SideLabel>
             <div>
-              <Button asChild variant="outline" className="font-code">
+              <Button asChild variant="outline" className="font-code border-primary/50 bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary">
                 <a href="/samuel-fortes-cv.pdf" download>
                   {t.about.cvFile}
                 </a>
