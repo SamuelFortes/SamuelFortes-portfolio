@@ -92,7 +92,6 @@ export default function ContactSection() {
       </div>
 
       <footer className="mt-24 flex flex-col items-center gap-3 text-center text-muted-foreground">
-        <Logo className="text-2xl" />
         <p>
           &copy; {new Date().getFullYear()} Samuel Furtado Fortes. {t.contact.rights}
         </p>
